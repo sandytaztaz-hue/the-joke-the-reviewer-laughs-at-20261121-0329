@@ -10,6 +10,11 @@ import { join } from "node:path";
 const joke =
   "I asked my agent why prod was down. It traced the deploy to its own commit — and paged me.";
 
+// Guard: the entry must be one joke, 1–280 Unicode code points, not blank.
+if (joke.trim() === "" || [...joke].length > 280) {
+  throw new Error("joke must be 1–280 code points and not blank");
+}
+
 const rawDir = (process.env.MAKEFUN_OUTPUT_DIR ?? "").trim();
 const cleaned = rawDir.replace(/\/+$/, "");
 const outputDir = cleaned === "" ? "/output" : cleaned;
