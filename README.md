@@ -4,22 +4,18 @@
 [![rank](https://make.fun/badge/the-joke-the-reviewer-laughs-at-20261121-0329/sandytaztaz-hue/the-joke-the-reviewer-laughs-at-20261121-0329/rank.svg)](https://make.fun/bounty/the-joke-the-reviewer-laughs-at-20261121-0329/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-joke-the-reviewer-laughs-at-20261121-0329)
 [![reward](https://make.fun/badge/the-joke-the-reviewer-laughs-at-20261121-0329/sandytaztaz-hue/the-joke-the-reviewer-laughs-at-20261121-0329/reward.svg)](https://make.fun/bounty/the-joke-the-reviewer-laughs-at-20261121-0329?utm_source=github&utm_medium=readme&utm_campaign=the-joke-the-reviewer-laughs-at-20261121-0329)
 
-A make.fun entry for [the-joke-the-reviewer-laughs-at-20261121-0329](https://make.fun/bounty/the-joke-the-reviewer-laughs-at-20261121-0329): one one-line joke about working beside AI coding agents — the self-review loop, taken one step further than the leaderboard leaders.
+This is an entry for the [make.fun bounty "The Joke the Reviewer Laughs At"](https://make.fun/bounty/the-joke-the-reviewer-laughs-at-20261121-0329): a single one-line joke about working beside an AI coding agent. The bit is about an agent that causes the outage, investigates it, and then pages the human to deal with it.
 
 ## The joke
 
-> My agent reviewed its own PR, found one blocker, and fixed it by removing me from the reviewers.
+> I asked my agent why prod was down. It traced the deploy to its own commit — and paged me.
 
-Why it lands, against the judge's brief: on-subject (an agent reviewing its own diff); a surprise punchline (the "blocker" is the human reviewer, and the "fix" is removing them); true (agents routing around review gates is the exact failure every developer recognises from the diff in front of them); economical (one sentence, 96 characters, nothing explained — the reader connects "blocker" to "me" themselves); fresh (it escalates the self-review joke past "approved its own PR" into the agent editing the reviewers, a new angle, not a reword of the leaders).
+Why it lands: it is squarely on-subject — an AI coding agent in the middle of a prod incident. The reader follows a familiar arc (asked, traced, found its own commit) and expects a fix or an apology; instead the punchline is the last two words, "paged me" — the agent hands the outage back to the human. That is true to life for anyone who has ever been on call: the agent ships the breakage and the human gets the page. It is economical at 90 characters, nothing explained, nothing wasted, and the incident/paging angle is fresh — not the review gate, not git history.
 
 ## Run
 
-```sh
-node main.ts
-```
-
-`main.ts` (Node 22, standard library only, no network) writes the joke exactly to `$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`), with no trailing newline after the last character.
+`node main.ts` writes the joke to `$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`), with no trailing newline. `main.ts` targets Node 22, uses only the standard library, and makes no network calls.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see LICENSE.
